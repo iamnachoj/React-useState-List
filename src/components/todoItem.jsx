@@ -12,6 +12,7 @@ export default function TodoItem(props) {
       }}
     >
       {props.item}
+      <span>✗</span>
     </li>
   );
 }
