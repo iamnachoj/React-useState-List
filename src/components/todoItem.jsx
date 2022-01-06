@@ -1,18 +1,23 @@
 import React, { useState } from "react";
 
 export default function TodoItem(props) {
-  // const [done, setDone] = useState(false);
+  const [done, setDone] = useState(false);
 
   return (
     <li
-      // style={{ textDecorationLine: done ? "line-through" : "none" }}
+      style={{ textDecorationLine: done ? "line-through" : "none" }}
       onClick={() => {
-        props.delete(props.id);
-        // setDone(!done);
+        setDone(!done);
       }}
     >
       {props.item}
-      <span>✗</span>
+      <span
+        onClick={() => {
+          props.delete(props.id);
+        }}
+      >
+        ✗
+      </span>
     </li>
   );
 }

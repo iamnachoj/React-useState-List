@@ -68,6 +68,7 @@ button {
 li span {
   position: absolute;
   right: -10px;
+  cursor: pointer;
 }
 button span {
   background: #f1f5f8;
