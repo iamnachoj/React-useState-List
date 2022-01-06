@@ -5,14 +5,10 @@ export default function TodoItem(props) {
 
   return (
     <li
-      style={
-        done
-          ? { textDecorationLine: "line-through" }
-          : { textDecorationLine: "none" }
-      }
-      onClick={() => {
-        let iterate = done ? false : true;
-        setDone(iterate);
+      style={{ textDecorationLine: done ? "line-through" : "none" }}
+      onClick={(event) => {
+        props.delete();
+        setDone(!done);
       }}
     >
       {props.item}

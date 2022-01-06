@@ -13,6 +13,7 @@ function App() {
     setItems([...items, input]);
     setInput("");
   }
+  function deleteItem() {}
 
   return (
     <div className="container">
@@ -27,8 +28,8 @@ function App() {
       </div>
       <div>
         <ul>
-          {items.map((item) => (
-            <TodoItem item={item} />
+          {items.map((item, index) => (
+            <TodoItem key={index} item={item} delete={deleteItem} />
           ))}
         </ul>
       </div>
